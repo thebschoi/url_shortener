@@ -50,5 +50,5 @@ def original(request, new_url):
     return HttpResponseRedirect(url.link)
 
 
-def post_list(request):
+def web_open(request):
     return render(request, 'my_url/url_main.html', {})
