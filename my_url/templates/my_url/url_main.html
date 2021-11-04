@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Shop Homepage - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'my_url/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="http://localhost:8000" style="font-family: 'Apple SD Gothic Neo';font-size:xx-large;font-weight: bolder;">SURL</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                   
+                    <form class="d-flex">
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-dark">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Shorten Your Url</h1>
+                <form action="my_url/" method="post" class="post-form my-3">
+                    {% csrf_token %}
+                    <input type="url" class="rounded-pill" name="link" placeholder="   Your Original Link" style="font-family: 'Apple SD Gothic Neo';width:500px;height:50px;border:none;"></input>
+                    <button type="submit" style="font-family: 'Apple SD Gothic Neo';width:100px;height:40px;border:none;background-color:dimgray;border-radius: 0.5rem;font-weight: bold;">Shorten!</button>
+                </form>
+                <div>&nbsp;</div>
+            </div> 
+        </header>
+        <div>&nbsp;</div>
+        <p style="text-align: center;">
+            <input id="myInput" value="{{new_url}}" readonly class="rounded-pill"  placeholder="   New Link" style="font-family: 'Apple SD Gothic Neo';width:500px;height:50px;border:3px solid;text-align: center;">
+            <br><br>
+            <input id="myInput" value="Original Link : {{original_url}}" readonly class="rounded-pill"  placeholder="   Original Link" style="font-family: 'Apple SD Gothic Neo';width:1000px;height:50px;border:3px solid;text-align: center;">
+            <button type="button" onClick="location.href='http://localhost:8000/'" style="font-family: 'Apple SD Gothic Neo';width:100px;height:40px;border:none;background-color:dimgray;border-radius: 0.5rem;font-weight: bold;text-align: center;">돌아가기</button>
+            
+
+        </p>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'my_url/js/scripts.js'%}"></script>
+    </body>
+</html>
